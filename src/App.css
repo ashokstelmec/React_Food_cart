@@ -14,6 +14,14 @@
   margin-bottom: 9rem;
 }
 
+.restaurant-name{
+  margin-left: 0.8rem;
+}
+
+.form-group{
+  margin-bottom: 1rem;
+}
+
 .header p{
   font-size: 5rem;
   text-align: center;
@@ -30,12 +38,12 @@
   margin-top: -5rem;
 }
 
-.buton{
+.menu-box{
   text-align: center;
   margin-top: -2rem;
 }
 
-.buton button{
+.menu-box button{
   padding: 0.7rem 1.6rem;
   background-color: rgb(14, 14, 185);
   color: aliceblue;
@@ -46,7 +54,7 @@
   font-family: sans-serif;
 }
 
-.buton button:hover{
+.menu-box button:hover{
   cursor: pointer;
 }
 
@@ -101,26 +109,27 @@
   margin-bottom: 0.45rem;
 }
 
-.buton1{
+.increment-btn{
   background-color: rgb(14, 14, 185);
   color: aliceblue;
+  margin-right: 1rem;
 }
 
-.buton2{
+.decrement-btn{
   background-color: lightgray;
   color: gray;
 }
 
-.buton1, .buton2:hover{
+.increment-btn, .decrement-btn:hover{
   cursor: pointer;
 }
 
-.order-1{
+.order-food{
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.order-1 button{
+.order-food button{
   padding: 0.6rem 1.6rem;
   background-color: red;
   color: yellow;
@@ -130,7 +139,7 @@
   border-radius: 5px;
 }
 
-.order-1 button:hover{
+.order-food button:hover{
   background-color: yellow;
   color: red;
   cursor: pointer;
@@ -193,7 +202,7 @@
   margin-bottom: 0.45rem;
 }
 
-.buton-3{
+.back-home-btn{
   padding: 0.8rem 2rem;
   border-radius: 5px;
   background-color: aqua;
@@ -206,7 +215,7 @@
   font-weight: bold;
 }
 
-.buton-3:hover{
+.back-home-btn:hover{
   cursor: pointer;
   background-color: green;
   color: aqua;

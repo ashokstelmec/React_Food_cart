@@ -4,17 +4,11 @@ import feeds from "../data/feeds.json";
 import { useNavigate } from "react-router-dom";
 
 const Order = () => {
-  const [count, setCount] = useState(0);
   const [cart, setCart] = useState([]);
-  const [showOrder, setShowOrder] = useState(false);
-  const [cost, setCost] = useState({
-    total: "Total:",
-    rate: "Cost (INR):",
-  });
 
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleOrderFood = (e) => {
     navigate("/checkout");
   };
 
@@ -29,54 +23,50 @@ const Order = () => {
     if (cart.indexOf(item) !== -1) {
       return;
     }
-    setCart((prev) => [...prev, { ...item, quantity: 0 }]);
+    setCart((prev) => [...prev, item]);
   };
 
   const handleCount = (item, d) => {
     const index = cart.indexOf(item); //  index
     // first time -1 bcoz it is not yet exists as its not yet pushed into cart array
+    if (index === -1) return;
     const arr = cart;
     arr[index].quantity += d;
-    if (arr[index]?.quantity === 0) arr[index].quantity = 1;
     setCart([...arr]);
   };
-  console.log(cart);
 
   return (
     <>
       <div className="header">
         <h3>
-          <FaUtensils /> &nbsp; &nbsp; Food's Restaurant
+          <FaUtensils /> <span className="restaurant-name"> Food's Restaurant</span>
         </h3>
       </div>
       <div className="card-list">
         {feeds.map((el) => (
           <div className="card" key={el.name} onClick={() => handleCart(el)}>
-            <img src={`/img/${el.image}`} alt="fries" />
+            <img src={`/img/${el.image}`} alt={el.name} />
             <div className="price">
               <p className="food">{el.name}</p>
               <p className="rate"> Price: {el.price}</p>
-              {showOrder ? (
+              {el.quantity > 0 && (
                 <div className="main-order">
-                  <div className="total-item">
-                    {cost.total} {count}
-                  </div>
+                  <div className="total-item">Total: {el.quantity}</div>
                   <div className="food-price">
-                    {cost.rate} {count * el.price}
+                    Cost (INR): {el.quantity * el.price}
                   </div>
                 </div>
-              ) : null}
+              )}
               <button
                 type="submit"
-                className="buton1"
+                className="increment-btn"
                 onClick={() => handleCount(el, 1)}
               >
                 +
               </button>
-              &nbsp; &nbsp;
               <button
                 type="submit"
-                className="buton2"
+                className="decrement-btn"
                 onClick={() => handleCount(el, -1)}
               >
                 -
@@ -85,8 +75,8 @@ const Order = () => {
           </div>
         ))}
       </div>
-      <div className="order-1">
-        <button type="submit" onClick={handleClick}>
+      <div className="order-food">
+        <button type="submit" onClick={handleOrderFood}>
           Order Food
         </button>
       </div>

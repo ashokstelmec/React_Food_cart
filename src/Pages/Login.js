@@ -18,11 +18,11 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    
-    if (email === "" || password === ""){
+
+    if (email === "" || password === "") {
       return;
     }
-    
+
     fetch("https://reqres.in/api/login", {
       method: "POST",
       headers: {
@@ -45,40 +45,43 @@ const Login = () => {
     <>
       <div className="header">
         <h3>
-          <FaUtensils /> &nbsp; &nbsp; Food's Restaurant
+          <FaUtensils />
+          <span className="restaurant-name"> Food's Restaurant</span>
         </h3>
       </div>
 
       <div className="login-form">
         <h1>Login Page</h1>
         <form>
-          <input
-            type="text"
-            minLength="8"
-            maxLength="29"
-            pattern=".*.com"
-            required
-            name="email"
-            placeholder="Username"
-            className="form-control"
-            onChange={handleChange}
-            value={email}
-          />
-          <br />
-          <br />
-          <input
-            type="password"
-            minLength="8"
-            maxLength="25"
-            required
-            name="password"
-            placeholder="Password"
-            className="form-control"
-            value={password}
-            onChange={handleChange}
-          />
-          <br />
-          <br />
+          <div className="form-group">
+            <input
+              type="text"
+              minLength="8"
+              maxLength="29"
+              pattern=".*.com"
+              required
+              name="email"
+              placeholder="Username"
+              className="form-control"
+              onChange={handleChange}
+              value={email}
+            />
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              minLength="8"
+              maxLength="25"
+              required
+              name="password"
+              placeholder="Password"
+              className="form-control"
+              value={password}
+              onChange={handleChange}
+            />
+          </div>
+
           <div className="login-button">
             <button type="submit" onClick={handleClick}>
               Login

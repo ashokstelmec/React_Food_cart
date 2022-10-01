@@ -2,21 +2,28 @@
     {
         "name": "Hamburger",
         "price": "200",
-        "image": "burger.jpeg"
+        "image": "burger.jpeg",
+        "quantity": 0
     },
     {
         "name": "Fries",
         "price": "100",
-        "image": "fries.jpeg"
+        "image": "fries.jpeg",
+        "quantity": 0
+
     },
     {
         "name": "Coke",
         "price": "50",
-        "image": "coke.jpeg"
+        "image": "coke.jpeg",
+        "quantity": 0
+
     },
     {
         "name": "Pepsi",
         "price": "50",
-        "image": "pepsi.jpeg"
+        "image": "pepsi.jpeg",
+        "quantity": 0
+
     }
 ]
