@@ -30,19 +30,6 @@
   opacity: 0.8;
 }
 
-.food{
-  margin-top: 9rem;
-}
-
-.kitchen{
-  margin-top: -5rem;
-}
-
-.menu-box{
-  text-align: center;
-  margin-top: -2rem;
-}
-
 .menu-box button{
   padding: 0.7rem 1.6rem;
   background-color: rgb(14, 14, 185);
@@ -219,4 +206,17 @@
   cursor: pointer;
   background-color: green;
   color: aqua;
+}
+
+.welcome-box{
+  margin-top: 5rem;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.welcome-msg{
+  font-size: 60px;
+  font-weight: 300;
 }

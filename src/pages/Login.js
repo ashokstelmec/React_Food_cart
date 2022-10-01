@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaUtensils } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -32,7 +31,6 @@ const Login = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        // console.log("Success:", data);
         localStorage.setItem("AUTH_TOKEN", JSON.stringify(data));
         navigate("/home");
       })
@@ -43,12 +41,6 @@ const Login = () => {
 
   return (
     <>
-      <div className="header">
-        <h3>
-          <FaUtensils />
-          <span className="restaurant-name"> Food's Restaurant</span>
-        </h3>
-      </div>
 
       <div className="login-form">
         <h1>Login Page</h1>
